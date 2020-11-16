@@ -2,5 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/adbario/php-dot-notation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/danielstjules/stringy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/flc/alidayu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" vcs="Git" />
   </component>
 </project>
