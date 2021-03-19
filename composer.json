@@ -20,7 +20,8 @@
         "topthink/framework": "5.1.*",
         "alibabacloud/client": "^1.5",
         "flc/alidayu": "^2.0",
-        "firebase/php-jwt": "^5.2"
+        "firebase/php-jwt": "^5.2",
+        "pda/pheanstalk": "^4.0"
     },
     "autoload": {
         "psr-4": {
