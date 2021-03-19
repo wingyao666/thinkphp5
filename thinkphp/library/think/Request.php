@@ -44,11 +44,6 @@ class Request
     ];
 
     /**
-     * @var object 对象实例
-     */
-    protected static $instance;
-
-    /**
      * 请求类型
      * @var string
      */
@@ -928,20 +923,6 @@ class Request
     }
 
     /**
-     * 初始化
-     * @access public
-     * @param array $options 参数
-     * @return \think\Request
-     */
-    public static function instance($options = [])
-    {
-        if (is_null(self::$instance)) {
-            self::$instance = new static($options);
-        }
-        return self::$instance;
-    }
-
-    /**
      * 获取当前请求的参数
      * @access public
      * @param  mixed         $name 变量名
@@ -1170,25 +1151,23 @@ class Request
 
         return $data;
     }
-    
 
     /**
      * 获取server参数
      * @access public
-     * @param string|array $name    数据名称
-     * @param string       $default 默认值
-     * @param string|array $filter  过滤方法
+     * @param  string        $name 数据名称
+     * @param  string        $default 默认值
      * @return mixed
      */
-    public function server($name = '', $default = null, $filter = '')
+    public function server($name = '', $default = null)
     {
-        if (empty($this->server)) {
-            $this->server = $_SERVER;
+        if (empty($name)) {
+            return $this->server;
+        } else {
+            $name = strtoupper($name);
         }
-        if (is_array($name)) {
-            return $this->server = array_merge($this->server, $name);
-        }
-        return $this->input($this->server, false === $name ? false : strtoupper($name), $default, $filter);
+
+        return isset($this->server[$name]) ? $this->server[$name] : $default;
     }
 
     /**
